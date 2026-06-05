@@ -528,9 +528,9 @@
     }
     .hero-trust .stars { color: var(--color-primary); letter-spacing: 1px; flex-shrink: 0; }
 
-    /* Validation email mock */
+    /* Hero mock : un vrai mail Gmail reçu par le client */
     .hero-visual {
-      border-radius: var(--radius-xl);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow-glow);
       overflow: hidden;
       border: 1px solid var(--color-border-primary);
@@ -538,63 +538,76 @@
       position: relative;
       z-index: 1;
     }
-    .db-topbar {
-      background: #1F2937;
-      padding: 14px 20px;
-      display: flex; gap: 6px; align-items: center;
-    }
-    .db-dot { width:10px; height:10px; border-radius:50%; }
-    .db-dot.r{background:#ff5f57;} .db-dot.y{background:#febc2e;} .db-dot.g{background:#28c840;}
-    .db-topbar-title { color:#9CA3AF; font-size:.72rem; margin-left:auto; font-family: var(--font-mono); }
-    .vmail-body { padding: var(--space-6); }
-    .vmail-from {
+    /* Barre Gmail */
+    .gm-bar {
       display:flex; align-items:center; gap: var(--space-3);
-      padding-bottom: var(--space-4); margin-bottom: var(--space-4);
-      border-bottom: 1px solid var(--color-border-subtle);
+      padding: 11px 16px;
+      background: #fff;
+      border-bottom: 1px solid var(--color-border-primary);
     }
-    .vmail-avatar {
-      width:38px; height:38px; border-radius:var(--radius-md);
+    .gm-logo { display:flex; align-items:center; gap:6px; font-weight:600; font-size:.92rem; color:#5f6368; flex-shrink:0; }
+    .gm-logo .m { color:#EA4335; font-size:1.2rem; font-weight:800; }
+    .gm-search {
+      flex:1; background:#EFF1F3; border-radius: var(--radius-full);
+      padding: 7px 14px; font-size:.72rem; color:#80868b;
+    }
+    .gm-account { width:26px; height:26px; border-radius:50%; background: var(--gradient-accent); flex-shrink:0; }
+    /* Sujet */
+    .gm-subject { padding: 16px 20px 0; }
+    .gm-subject h3 { font-size: 1.05rem; font-weight:700; color: var(--color-text-primary); }
+    .gm-labels { display:flex; gap:6px; margin-top:8px; }
+    .gm-label { font-size:.62rem; font-weight:600; color:#5f6368; background:#EFF1F3; padding:2px 9px; border-radius: var(--radius-full); }
+    /* Expéditeur */
+    .gm-from { display:flex; align-items:center; gap: var(--space-3); padding: 14px 20px; }
+    .gm-avatar {
+      width:40px; height:40px; border-radius:50%;
       background: var(--gradient-accent); color:#fff;
       display:flex; align-items:center; justify-content:center;
-      font-weight:800; font-size:.78rem; flex-shrink:0;
+      font-weight:800; font-size:.8rem; flex-shrink:0;
     }
-    .vmail-subject { font-size: var(--text-body-sm); font-weight:700; }
-    .vmail-meta { font-size:.72rem; color: var(--color-text-muted); }
-    .vmail-photo {
+    .gm-from-name { font-size: var(--text-body-sm); font-weight:700; }
+    .gm-from-mail { color: var(--color-text-muted); font-weight:400; }
+    .gm-from-meta { font-size:.72rem; color: var(--color-text-muted); }
+    .gm-star { margin-left:auto; color: var(--color-text-ghost); font-size:1.15rem; }
+    /* Corps */
+    .gm-body { padding: 0 20px 18px; }
+    .gm-photo {
       position: relative;
       border-radius: var(--radius-md);
-      height: 150px;
+      aspect-ratio: 16 / 10;
       background:
         linear-gradient(135deg, rgba(245,158,11,.18), rgba(249,115,22,.28)),
         repeating-linear-gradient(45deg, #FEF3C7 0 14px, #FDE68A 14px 28px);
       border: 1px solid var(--color-border-subtle);
+      overflow:hidden;
       display:flex; align-items:flex-end;
       margin-bottom: var(--space-4);
-      overflow:hidden;
     }
-    .vmail-photo span {
-      font-size:.66rem; font-weight:700; color:#92400E;
-      background: rgba(255,255,255,.85);
-      padding: 3px 8px; border-radius: var(--radius-sm);
-      margin: 8px;
+    .gm-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .gm-photo span {
+      position:relative; z-index:1;
+      font-size:.64rem; font-weight:700; color:#92400E;
+      background: rgba(255,255,255,.88);
+      padding: 3px 8px; border-radius: var(--radius-sm); margin: 8px;
     }
-    .vmail-nets { display:flex; gap:6px; margin-bottom: var(--space-3); }
-    .vmail-net {
+    .gm-nets { display:flex; gap:6px; margin-bottom: var(--space-3); }
+    .gm-net {
       font-size:.66rem; font-weight:700; padding:3px 9px;
       border-radius: var(--radius-full);
       background: var(--color-primary-muted); color:#92400E;
       border:1px solid rgba(146,64,14,.15);
     }
-    .vmail-caption { font-size: var(--text-body-sm); color: var(--color-text-secondary); line-height:1.55; margin-bottom: var(--space-3); }
-    .vmail-tags { font-size:.72rem; color: var(--color-primary); font-weight:600; margin-bottom: var(--space-5); }
-    .vmail-actions { display:flex; gap: var(--space-2); }
-    .vmail-btn {
+    .gm-caption { font-size: var(--text-body-sm); color: var(--color-text-secondary); line-height:1.55; margin-bottom: var(--space-3); }
+    .gm-tags { font-size:.72rem; color: var(--color-primary); font-weight:600; margin-bottom: var(--space-5); }
+    .gm-actions { display:flex; gap: var(--space-2); }
+    .gm-btn {
       flex:1; text-align:center; font-size: var(--text-body-sm); font-weight:700;
-      padding: 10px 6px; border-radius: var(--radius-md); border:1px solid transparent;
+      padding: 11px 6px; border-radius: var(--radius-md); border:1px solid transparent;
     }
-    .vmail-btn.publish { background: var(--color-success); color:#fff; }
-    .vmail-btn.next    { background: var(--color-background); color: var(--color-text-secondary); border-color: var(--color-border-primary); }
-    .vmail-btn.cancel  { background: rgba(239,68,68,.1); color: var(--color-error); border-color: rgba(239,68,68,.2); }
+    .gm-btn.publish { background: var(--color-success); color:#fff; }
+    .gm-btn.next    { background: var(--color-background); color: var(--color-text-secondary); border-color: var(--color-border-primary); }
+    .gm-btn.cancel  { background: rgba(239,68,68,.1); color: var(--color-error); border-color: rgba(239,68,68,.2); }
+    .gm-hint { text-align:center; font-size:.66rem; color: var(--color-text-muted); margin-top: var(--space-3); }
 
     /* ───────────────────────────────────────────────────────────────
        2. PROBLEM
@@ -886,10 +899,11 @@
        FOOTER
     ─────────────────────────────────────────────────────────────── */
     footer {
-      background: #0D1117;
-      color: var(--color-text-muted);
-      padding: var(--space-12) 0 var(--space-8);
+      background: var(--color-background);
+      color: var(--color-text-secondary);
+      padding: var(--space-16) 0 var(--space-8);
       font-size: var(--text-body-sm);
+      border-top: 1px solid var(--color-border-primary);
     }
     .footer-grid {
       display: grid;
@@ -897,16 +911,17 @@
       gap: var(--space-12);
       margin-bottom: var(--space-12);
     }
-    .footer-brand .logo { color: #fff; font-size: 1.25rem; }
-    .footer-brand p { margin-top: var(--space-3); line-height: 1.7; max-width: 300px; }
-    .footer-col h4 { color: #fff; font-size: var(--text-caption); margin-bottom: var(--space-4); text-transform: uppercase; letter-spacing:.06em; }
+    .footer-brand .logo { color: var(--color-text-primary); font-size: 1.25rem; }
+    .footer-brand p { margin-top: var(--space-3); line-height: 1.7; max-width: 300px; color: var(--color-text-muted); }
+    .footer-col h4 { color: var(--color-text-primary); font-size: var(--text-caption); margin-bottom: var(--space-4); text-transform: uppercase; letter-spacing:.06em; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); }
-    .footer-col ul a { color: var(--color-text-muted); text-decoration: none; transition: color .15s; }
+    .footer-col ul a { color: var(--color-text-secondary); text-decoration: none; transition: color .15s; }
     .footer-col ul a:hover { color: var(--color-primary); }
     .footer-bottom {
-      border-top: 1px solid #1F2937;
+      border-top: 1px solid var(--color-border-primary);
       padding-top: var(--space-6);
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-3);
+      color: var(--color-text-muted);
     }
 
     /* ───────────────────────────────────────────────────────────────
@@ -993,41 +1008,55 @@
         </div>
       </div>
 
-      <!-- Mock : le mail de validation quotidien, coeur du produit -->
+      <!-- Mock : le mail de validation quotidien tel que le client le reçoit dans Gmail -->
       <div class="hero-visual">
-        <div class="db-topbar">
-          <span class="db-dot r"></span>
-          <span class="db-dot y"></span>
-          <span class="db-dot g"></span>
-          <span class="db-topbar-title">Validation du jour</span>
+        <div class="gm-bar">
+          <div class="gm-logo"><span class="m">M</span> Gmail</div>
+          <div class="gm-search">Rechercher dans les messages</div>
+          <div class="gm-account"></div>
         </div>
-        <div class="vmail-body">
-          <div class="vmail-from">
-            <div class="vmail-avatar">SN</div>
-            <div style="flex:1">
-              <div class="vmail-subject">Validation EasySN, ta publication du jour</div>
-              <div class="vmail-meta">de EasySN · à toi · maintenant</div>
-            </div>
+
+        <div class="gm-subject">
+          <h3>Ta publication du jour, prête à valider</h3>
+          <div class="gm-labels">
+            <span class="gm-label">Boîte de réception</span>
+            <span class="gm-label">EasySN</span>
+          </div>
+        </div>
+
+        <div class="gm-from">
+          <div class="gm-avatar">SN</div>
+          <div style="flex:1">
+            <div class="gm-from-name">EasySN <span class="gm-from-mail">&lt;hello@ultrafacile.ai&gt;</span></div>
+            <div class="gm-from-meta">à moi · 9:00</div>
+          </div>
+          <span class="gm-star">☆</span>
+        </div>
+
+        <div class="gm-body">
+          <div class="gm-photo">
+            <!-- Dépose une vraie photo LOC'KARTING ici : assets/hero-lockarting.jpg -->
+            <img src="assets/hero-lockarting.jpg" alt="Photo LOC'KARTING" onerror="this.style.display='none'" />
+            <span>📷 Ta photo, depuis ton Drive</span>
           </div>
 
-          <div class="vmail-photo"><span>📷 Ta photo, depuis ton Drive</span></div>
-
-          <div class="vmail-nets">
-            <span class="vmail-net">in LinkedIn</span>
-            <span class="vmail-net">f Facebook</span>
-            <span class="vmail-net">◎ Instagram</span>
+          <div class="gm-nets">
+            <span class="gm-net">in LinkedIn</span>
+            <span class="gm-net">f Facebook</span>
+            <span class="gm-net">◎ Instagram</span>
           </div>
 
-          <p class="vmail-caption">
+          <p class="gm-caption">
             « Nouvelle session ce week-end sur le circuit. 40 ans qu'on fait vrombir Montpellier, et l'envie est intacte. Réserve ton créneau. »
           </p>
-          <div class="vmail-tags">#karting #montpellier #loisirs #adrenaline</div>
+          <div class="gm-tags">#karting #montpellier #loisirs #adrenaline</div>
 
-          <div class="vmail-actions">
-            <span class="vmail-btn publish">Publier</span>
-            <span class="vmail-btn next">Suivant</span>
-            <span class="vmail-btn cancel">Annuler</span>
+          <div class="gm-actions">
+            <span class="gm-btn publish">Publier</span>
+            <span class="gm-btn next">Suivant</span>
+            <span class="gm-btn cancel">Annuler</span>
           </div>
+          <p class="gm-hint">Un seul clic. On s'occupe du reste.</p>
         </div>
       </div>
     </div>
@@ -1097,7 +1126,7 @@
         <div class="solution-card scroll-reveal">
           <div class="sol-icon">✍️</div>
           <h3>Des légendes à ta voix</h3>
-          <p>L'IA lit ta base de connaissance (ton activité, ton ton, tes offres) et écrit des légendes ancrées sur ce qu'on voit vraiment sur la photo, adaptées à chaque réseau.</p>
+          <p>Notre programme lit ta base de connaissance (ton activité, ton ton, tes offres) et rédige des légendes ancrées sur ce qu'on voit vraiment sur la photo, adaptées à chaque réseau.</p>
         </div>
         <div class="solution-card scroll-reveal">
           <div class="sol-icon">✅</div>
@@ -1142,7 +1171,7 @@
           </div>
           <div class="step-body">
             <h3>On t'audite et on construit ta base de connaissance</h3>
-            <p>Un échange pour cadrer ton activité, ta voix, tes offres et tes clients. On en fait un document de référence que l'IA lira à chaque génération.</p>
+            <p>Un échange pour cadrer ton activité, ta voix, tes offres et tes clients. On en fait un document de référence que notre programme relit à chaque génération.</p>
             <span class="step-time">⏱ Une fois, au départ</span>
           </div>
         </div>
@@ -1286,7 +1315,7 @@
           <span class="popular-badge">⭐ Le coeur du service</span>
           <div class="plan-name">EasySN, présence automatisée</div>
           <div class="plan-price">3 500 €<span> HT</span></div>
-          <div class="plan-sub">+ 150 à 490 €/mois de maintenance</div>
+          <div class="plan-sub">+ 150 €/mois de maintenance</div>
           <p class="plan-desc">Tout le système, installé et maintenu pour toi. Tu n'as plus qu'à valider.</p>
           <ul class="plan-features">
             <li>Génération hebdo à partir de tes vraies photos</li>
