@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Automatisation Réseaux Sociaux IA - EasySN AI | Gagnez 5h/semaine</title>
-  <meta name="description" content="Automatisez vos publications LinkedIn, Instagram et Facebook avec notre IA. Contenu personnalisé, horaires optimaux, 3x plus d'engagement. Essai gratuit 14 jours." />
-  <meta name="keywords" content="automatisation réseaux sociaux, IA marketing social media, automatisation publication Facebook, outil automatisation LinkedIn, social media automation France, automatiser Instagram entreprise" />
+  <title>EasySN, tes réseaux publiés pour toi à partir de tes vraies photos | ULTRAFACILE AI</title>
+  <meta name="description" content="EasySN génère chaque semaine tes publications LinkedIn, Facebook et Instagram à partir de tes vraies photos. Tu valides en 1 clic par email, on publie. Pas d'image IA. Par l'agence ULTRAFACILE AI." />
+  <meta name="keywords" content="automatisation réseaux sociaux, publication LinkedIn Facebook Instagram, contenu à partir de vraies photos, validation 1 clic, agence IA TPE PME, ULTRAFACILE AI, EasySN" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,7 +13,7 @@
 
   <style>
     /* ─────────────────────────────────────────────────────────────────
-       DESIGN TOKENS — from design.md
+       DESIGN TOKENS - from design.md
     ───────────────────────────────────────────────────────────────── */
     :root {
       /* Primary */
@@ -60,7 +60,7 @@
       --font-body:    'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-mono:    'SF Mono', Monaco, 'Inconsolata', 'Roboto Mono', Consolas, monospace;
 
-      /* Type scale — Desktop */
+      /* Type scale - Desktop */
       --text-display:         4rem;
       --text-display-weight:  700;
       --text-display-height:  1.1;
@@ -76,7 +76,7 @@
       --text-body-sm: 0.875rem;   --text-body-sm-weight: 400;   --text-body-sm-height: 1.5;
       --text-caption: 0.75rem;    --text-caption-weight: 500;   --text-caption-height: 1.4;
 
-      /* Type scale — Mobile */
+      /* Type scale - Mobile */
       --text-display-mobile: 2.5rem;
       --text-h1-mobile:      2rem;
       --text-h2-mobile:      1.75rem;
@@ -426,8 +426,18 @@
       color: var(--color-text-primary);
       text-decoration: none;
       font-family: var(--font-heading);
+      line-height: 1.05;
     }
     .logo span { color: var(--color-primary); }
+    .logo small {
+      display: block;
+      font-size: .6rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-top: 1px;
+    }
     .nav-menu { display: flex; gap: var(--space-8); list-style: none; }
     .nav-menu a {
       text-decoration: none;
@@ -516,19 +526,9 @@
       font-size: var(--text-body-sm);
       color: var(--color-text-muted);
     }
-    .avatars { display: flex; }
-    .avatars span {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      background: var(--color-primary-muted);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
-      margin-left: -8px;
-    }
-    .avatars span:first-child { margin-left: 0; }
+    .hero-trust .stars { color: var(--color-primary); letter-spacing: 1px; flex-shrink: 0; }
 
-    /* Dashboard mock */
+    /* Validation email mock */
     .hero-visual {
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-glow);
@@ -545,27 +545,56 @@
     }
     .db-dot { width:10px; height:10px; border-radius:50%; }
     .db-dot.r{background:#ff5f57;} .db-dot.y{background:#febc2e;} .db-dot.g{background:#28c840;}
-    .db-body { padding: var(--space-6); }
-    .db-label { font-size: var(--text-caption); font-weight: 700; text-transform: uppercase; letter-spacing:.08em; color: var(--color-text-muted); margin-bottom: var(--space-3); }
-    .db-stats { display: flex; gap: var(--space-3); margin-bottom: var(--space-4); }
-    .db-stat {
-      flex: 1; background: var(--color-background);
-      border-radius: var(--radius-md); padding: var(--space-4);
-      text-align: center; border: 1px solid var(--color-border-subtle);
+    .db-topbar-title { color:#9CA3AF; font-size:.72rem; margin-left:auto; font-family: var(--font-mono); }
+    .vmail-body { padding: var(--space-6); }
+    .vmail-from {
+      display:flex; align-items:center; gap: var(--space-3);
+      padding-bottom: var(--space-4); margin-bottom: var(--space-4);
+      border-bottom: 1px solid var(--color-border-subtle);
     }
-    .db-stat-num { font-size: 1.4rem; font-weight: 800; color: var(--color-primary); }
-    .db-stat-lbl { font-size: .68rem; color: var(--color-text-muted); }
-    .db-post {
-      background: var(--color-background);
-      border-radius: var(--radius-md); padding: var(--space-4);
-      margin-bottom: var(--space-3);
-      display: flex; align-items: center; gap: var(--space-3);
+    .vmail-avatar {
+      width:38px; height:38px; border-radius:var(--radius-md);
+      background: var(--gradient-accent); color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:800; font-size:.78rem; flex-shrink:0;
+    }
+    .vmail-subject { font-size: var(--text-body-sm); font-weight:700; }
+    .vmail-meta { font-size:.72rem; color: var(--color-text-muted); }
+    .vmail-photo {
+      position: relative;
+      border-radius: var(--radius-md);
+      height: 150px;
+      background:
+        linear-gradient(135deg, rgba(245,158,11,.18), rgba(249,115,22,.28)),
+        repeating-linear-gradient(45deg, #FEF3C7 0 14px, #FDE68A 14px 28px);
       border: 1px solid var(--color-border-subtle);
+      display:flex; align-items:flex-end;
+      margin-bottom: var(--space-4);
+      overflow:hidden;
     }
-    .db-post-icon { font-size: 1.2rem; flex-shrink: 0; }
-    .db-post-name { font-size: var(--text-body-sm); font-weight: 600; }
-    .db-post-time { font-size: .72rem; color: var(--color-text-muted); }
-    .db-post .badge { font-size: .68rem; padding: 3px 10px; }
+    .vmail-photo span {
+      font-size:.66rem; font-weight:700; color:#92400E;
+      background: rgba(255,255,255,.85);
+      padding: 3px 8px; border-radius: var(--radius-sm);
+      margin: 8px;
+    }
+    .vmail-nets { display:flex; gap:6px; margin-bottom: var(--space-3); }
+    .vmail-net {
+      font-size:.66rem; font-weight:700; padding:3px 9px;
+      border-radius: var(--radius-full);
+      background: var(--color-primary-muted); color:#92400E;
+      border:1px solid rgba(146,64,14,.15);
+    }
+    .vmail-caption { font-size: var(--text-body-sm); color: var(--color-text-secondary); line-height:1.55; margin-bottom: var(--space-3); }
+    .vmail-tags { font-size:.72rem; color: var(--color-primary); font-weight:600; margin-bottom: var(--space-5); }
+    .vmail-actions { display:flex; gap: var(--space-2); }
+    .vmail-btn {
+      flex:1; text-align:center; font-size: var(--text-body-sm); font-weight:700;
+      padding: 10px 6px; border-radius: var(--radius-md); border:1px solid transparent;
+    }
+    .vmail-btn.publish { background: var(--color-success); color:#fff; }
+    .vmail-btn.next    { background: var(--color-background); color: var(--color-text-secondary); border-color: var(--color-border-primary); }
+    .vmail-btn.cancel  { background: rgba(239,68,68,.1); color: var(--color-error); border-color: rgba(239,68,68,.2); }
 
     /* ───────────────────────────────────────────────────────────────
        2. PROBLEM
@@ -642,6 +671,12 @@
       border-color: var(--color-primary);
     }
     .solution-card:hover::before { opacity: 1; }
+    .solution-card.feature-star { border-color: var(--color-primary); box-shadow: var(--shadow-glow); }
+    .feature-tag {
+      display:inline-block; font-size:.62rem; font-weight:700; text-transform:uppercase;
+      letter-spacing:.06em; color:#92400E; background: var(--color-primary-muted);
+      padding: 2px 8px; border-radius: var(--radius-full); margin-bottom: var(--space-3);
+    }
 
     .sol-icon {
       width: 52px; height: 52px;
@@ -714,10 +749,21 @@
       border-radius: var(--radius-xl);
       padding: var(--space-8);
       transition: all .3s ease;
+      position: relative;
     }
     .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--color-primary); }
+    .testi-card.real { border-color: var(--color-primary); box-shadow: var(--shadow-glow); }
+    .testi-card.placeholder { border-style: dashed; border-color: var(--color-border-primary); background: var(--color-surface); }
+    .testi-tag {
+      position:absolute; top: var(--space-5); right: var(--space-5);
+      font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+      padding: 3px 9px; border-radius: var(--radius-full);
+    }
+    .testi-tag.client { background: rgba(16,185,129,.12); color: var(--color-success); border:1px solid rgba(16,185,129,.25); }
+    .testi-tag.todo { background: var(--color-border-subtle); color: var(--color-text-muted); border:1px solid var(--color-border-primary); }
     .testi-stars { color: var(--color-primary); font-size: 1rem; margin-bottom: var(--space-4); letter-spacing: 2px; }
     .testi-quote { font-size: var(--text-body-sm); color: var(--color-text-primary); line-height: 1.7; margin-bottom: var(--space-6); }
+    .testi-card.placeholder .testi-quote { color: var(--color-text-muted); font-style: italic; }
     .testi-author { display: flex; align-items: center; gap: var(--space-4); }
     .testi-avatar {
       width: 44px; height: 44px; border-radius: 50%;
@@ -759,6 +805,7 @@
       padding: var(--space-8);
       position: relative;
       transition: all .3s ease;
+      display: flex; flex-direction: column;
     }
     .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
     .pricing-card.popular { border-color: var(--color-primary); box-shadow: var(--shadow-glow); }
@@ -772,19 +819,20 @@
       white-space: nowrap;
     }
     .plan-name { font-size: var(--text-caption); font-weight: 700; text-transform: uppercase; letter-spacing:.08em; color: var(--color-text-muted); margin-bottom: var(--space-3); }
-    .plan-price { font-size: 2.6rem; font-weight: 800; color: var(--color-text-primary); }
+    .plan-price { font-size: 2.4rem; font-weight: 800; color: var(--color-text-primary); line-height:1.1; }
     .plan-price span { font-size: 1rem; font-weight: 400; color: var(--color-text-muted); }
+    .plan-sub { font-size: var(--text-body-sm); font-weight:600; color: var(--color-primary); margin-top: var(--space-1); }
     .plan-desc { font-size: var(--text-body-sm); color: var(--color-text-secondary); margin: var(--space-3) 0 var(--space-6); }
-    .plan-features { list-style: none; margin-bottom: var(--space-8); display: flex; flex-direction: column; gap: var(--space-3); }
-    .plan-features li { display: flex; align-items: center; gap: var(--space-3); font-size: var(--text-body-sm); }
+    .plan-features { list-style: none; margin-bottom: var(--space-8); display: flex; flex-direction: column; gap: var(--space-3); flex:1; }
+    .plan-features li { display: flex; align-items: flex-start; gap: var(--space-3); font-size: var(--text-body-sm); }
     .plan-features li::before { content: "✓"; color: var(--color-primary); font-weight: 700; flex-shrink: 0; }
     .plan-features li.off::before { content: "–"; color: var(--color-text-ghost); }
     .plan-features li.off { color: var(--color-text-ghost); }
     .plan-cta { width: 100%; justify-content: center; }
-    .pricing-note { text-align: center; margin-top: var(--space-8); font-size: var(--text-body-sm); color: var(--color-text-muted); max-width: 600px; margin-left: auto; margin-right: auto; }
+    .pricing-note { text-align: center; margin-top: var(--space-8); font-size: var(--text-body-sm); color: var(--color-text-muted); max-width: 640px; margin-left: auto; margin-right: auto; }
 
     /* ───────────────────────────────────────────────────────────────
-       8. LOGOS MARQUEE
+       8. INTEGRATIONS MARQUEE
     ─────────────────────────────────────────────────────────────── */
     #logos {
       background: var(--color-primary-muted);
@@ -805,7 +853,7 @@
       border-radius: var(--radius-md);
       padding: var(--space-4) var(--space-8);
       font-size: var(--text-body-sm); font-weight: 700;
-      color: #bbb; letter-spacing:.04em; white-space: nowrap;
+      color: #6B7280; letter-spacing:.04em; white-space: nowrap;
       transition: color .3s, box-shadow .3s;
     }
     .logo-item:hover { color: var(--color-text-primary); box-shadow: var(--shadow-sm); }
@@ -826,7 +874,7 @@
       overflow: hidden;
     }
     #cta-final h2 { color: #fff; margin-bottom: var(--space-4); }
-    #cta-final p { color: var(--color-text-muted); font-size: var(--text-body-lg); max-width: 520px; margin: 0 auto var(--space-10); }
+    #cta-final p { color: var(--color-text-muted); font-size: var(--text-body-lg); max-width: 560px; margin: 0 auto var(--space-10); }
     .cta-guarantees {
       display: flex; justify-content: center; gap: var(--space-8);
       margin-top: var(--space-8); flex-wrap: wrap;
@@ -850,7 +898,7 @@
       margin-bottom: var(--space-12);
     }
     .footer-brand .logo { color: #fff; font-size: 1.25rem; }
-    .footer-brand p { margin-top: var(--space-3); line-height: 1.7; max-width: 280px; }
+    .footer-brand p { margin-top: var(--space-3); line-height: 1.7; max-width: 300px; }
     .footer-col h4 { color: #fff; font-size: var(--text-caption); margin-bottom: var(--space-4); text-transform: uppercase; letter-spacing:.06em; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); }
     .footer-col ul a { color: var(--color-text-muted); text-decoration: none; transition: color .15s; }
@@ -899,14 +947,14 @@
   <!-- ── NAV ──────────────────────────────────────────────────────── -->
   <nav id="main-nav">
     <div class="nav-inner">
-      <a href="#" class="logo">EasySN <span>AI</span></a>
+      <a href="#" class="logo">Easy<span>SN</span><small>par ULTRAFACILE AI</small></a>
       <ul class="nav-menu">
-        <li><a href="#solutions">Fonctionnalités</a></li>
+        <li><a href="#solutions">Ce que ça fait</a></li>
         <li><a href="#process">Comment ça marche</a></li>
-        <li><a href="#testimonials">Témoignages</a></li>
-        <li><a href="#pricing">Tarifs</a></li>
+        <li><a href="#testimonials">Clients</a></li>
+        <li><a href="#pricing">Tarif</a></li>
       </ul>
-      <a href="#cta-final" class="btn btn-primary" style="padding:.75rem 1.5rem; font-size:.9rem;">Essai gratuit 14 jours</a>
+      <a href="#cta-final" data-cta class="btn btn-primary" style="padding:.75rem 1.5rem; font-size:.9rem;">Réserver un appel</a>
       <button class="nav-burger" aria-label="Menu" id="burger">
         <span></span><span></span><span></span>
       </button>
@@ -922,79 +970,63 @@
       <div class="hero-stagger">
         <div class="hero-badge">
           <span class="live-dot"></span>
-          500+ entrepreneurs nous font confiance 🚀
+          Tes vraies photos. Jamais d'image IA.
         </div>
 
         <h1 class="hero-title text-balance">
-          Fini les dimanches soir à<br />
-          <span class="gradient-text">planifier tes posts</span>
+          Tes réseaux publiés pour toi,<br />
+          <span class="gradient-text">à partir de tes vraies photos</span>
         </h1>
 
         <p class="hero-sub">
-          EasySN AI publie du contenu engageant pour toi sur LinkedIn, Instagram et Facebook — au bon moment, avec ta voix, sans que tu lèves le petit doigt.
+          Chaque semaine, EasySN prépare tes publications LinkedIn, Facebook et Instagram à partir de tes propres photos et de ta voix. Tu valides en 1 clic par email, on publie. Tu ne touches plus à rien.
         </p>
 
         <div class="hero-actions">
-          <a href="#cta-final" class="btn btn-primary btn-hero">Démarrer mon essai gratuit 14 jours →</a>
-          <a href="#process" class="btn btn-secondary btn-hero">Voir la démo en 2 min</a>
+          <a href="#cta-final" data-cta class="btn btn-primary btn-hero">Réserver un appel →</a>
+          <a href="#process" class="btn btn-secondary btn-hero">Voir comment ça marche</a>
         </div>
 
         <div class="hero-trust">
-          <div class="avatars">
-            <span>👩</span><span>👨</span><span>👩</span><span>👨</span>
-          </div>
-          <span>Rejoins <strong>500+ entrepreneurs</strong> qui automatisent déjà</span>
+          <span class="stars">★★★★★</span>
+          <span>Premier client : <strong>LOC'KARTING</strong>, circuit de karting près de Montpellier (4,4/5 sur 1 374 avis Google)</span>
         </div>
       </div>
 
+      <!-- Mock : le mail de validation quotidien, coeur du produit -->
       <div class="hero-visual">
         <div class="db-topbar">
           <span class="db-dot r"></span>
           <span class="db-dot y"></span>
           <span class="db-dot g"></span>
+          <span class="db-topbar-title">Validation du jour</span>
         </div>
-        <div class="db-body">
-          <div class="db-label">Tableau de bord — Cette semaine</div>
-          <div class="db-stats">
-            <div class="db-stat">
-              <div class="db-stat-num">+312%</div>
-              <div class="db-stat-lbl">Engagement</div>
-            </div>
-            <div class="db-stat">
-              <div class="db-stat-num">5h</div>
-              <div class="db-stat-lbl">Gagnées</div>
-            </div>
-            <div class="db-stat">
-              <div class="db-stat-num">14</div>
-              <div class="db-stat-lbl">Posts publiés</div>
+        <div class="vmail-body">
+          <div class="vmail-from">
+            <div class="vmail-avatar">SN</div>
+            <div style="flex:1">
+              <div class="vmail-subject">Validation EasySN, ta publication du jour</div>
+              <div class="vmail-meta">de EasySN · à toi · maintenant</div>
             </div>
           </div>
 
-          <div class="db-post">
-            <span class="db-post-icon">💼</span>
-            <div style="flex:1">
-              <div class="db-post-name">Post LinkedIn — Conseil du lundi</div>
-              <div class="db-post-time">Publié · il y a 2h · 142 réactions</div>
-            </div>
-            <span class="badge badge-success" style="font-size:.68rem; padding:3px 10px;">Publié</span>
+          <div class="vmail-photo"><span>📷 Ta photo, depuis ton Drive</span></div>
+
+          <div class="vmail-nets">
+            <span class="vmail-net">in LinkedIn</span>
+            <span class="vmail-net">f Facebook</span>
+            <span class="vmail-net">◎ Instagram</span>
           </div>
 
-          <div class="db-post">
-            <span class="db-post-icon">📸</span>
-            <div style="flex:1">
-              <div class="db-post-name">Reel Instagram — Astuce client</div>
-              <div class="db-post-time">Planifié · Demain 09h00</div>
-            </div>
-            <span class="badge" style="font-size:.68rem; padding:3px 10px;">Planifié</span>
-          </div>
+          <p class="vmail-caption">
+            « Nouvelle session ce week-end sur le circuit. 40 ans qu'on fait vrombir Montpellier, et l'envie est intacte. Réserve ton créneau. »
+          </p>
+          <div class="vmail-tags">#karting #montpellier #loisirs #adrenaline</div>
 
-          <div class="db-post">
-            <span class="db-post-icon">📘</span>
-            <div style="flex:1">
-              <div class="db-post-name">Facebook — Offre de la semaine</div>
-              <div class="db-post-time">Brouillon · En attente de validation</div>
-            </div>
-            <span class="badge" style="font-size:.68rem; padding:3px 10px; background:#FEF3C7; color:#92400E; border-color:rgba(146,64,14,.2);">Brouillon</span>
+          <div class="vmail-actions">
+            <span class="vmail-btn publish">Publier</span>
+            <span class="vmail-btn next">Suivant</span>
+            <span class="vmail-btn cancel">Annuler</span>
           </div>
         </div>
       </div>
@@ -1008,37 +1040,37 @@
     <div class="glow-orb-1" style="opacity:.15"></div>
     <div class="container">
       <span class="section-label">Le vrai problème</span>
-      <h2 class="scroll-reveal">Tes concurrents sont actifs 7j/7.<br />Toi, tu manques de temps.</h2>
-      <p class="sub scroll-reveal">On le sait. Les réseaux sociaux, c'est chronophage, ingrat, et toujours relégué au bas de ta to-do list.</p>
+      <h2 class="scroll-reveal">Tu sais que tu devrais publier.<br />Mais ça passe toujours après le reste.</h2>
+      <p class="sub scroll-reveal">Les réseaux sociaux, c'est chronophage, ingrat, et toujours relégué en bas de la to-do. Alors tu postes par à-coups, ou plus du tout.</p>
 
       <div class="problems-grid scroll-reveal-stagger">
         <div class="problem-card scroll-reveal">
           <div class="problem-icon">⏰</div>
-          <h3>Trop chronophage</h3>
-          <p>Tu passes des heures à réfléchir à quoi poster, pour au final publier n'importe quoi à la va-vite.</p>
-          <div class="problem-stat">3h<span style="font-size:1rem">/sem.</span></div>
-          <div class="problem-stat-label">perdues en moyenne</div>
+          <h3>Tu n'as pas le temps</h3>
+          <p>Penser un post, choisir une photo, écrire, adapter à chaque réseau, publier. À faire correctement, ça prend des heures que tu n'as pas.</p>
+          <div class="problem-stat">2 à 3h<span style="font-size:1rem">/sem.</span></div>
+          <div class="problem-stat-label">pour t'en occuper sérieusement</div>
         </div>
         <div class="problem-card scroll-reveal">
-          <div class="problem-icon">😞</div>
-          <h3>Peu de résultats</h3>
-          <p>Ton expertise mérite mieux que 3 likes sur Instagram. Le problème, c'est pas le contenu — c'est la régularité.</p>
-          <div class="problem-stat">-78%</div>
-          <div class="problem-stat-label">de portée sans régularité</div>
-        </div>
-        <div class="problem-card scroll-reveal">
-          <div class="problem-icon">🤯</div>
-          <h3>Jamais le bon moment</h3>
-          <p>Publier au mauvais horaire, c'est parler dans le vide. Chaque réseau a ses pics — tu les connais tous ?</p>
-          <div class="problem-stat">+40%</div>
-          <div class="problem-stat-label">d'engagement aux bons horaires</div>
+          <div class="problem-icon">🤖</div>
+          <h3>L'IA classique sonne faux</h3>
+          <p>Les outils crachent des visuels et des textes hors-sol, déconnectés de ton vrai quotidien. Tes clients le sentent tout de suite.</p>
+          <div class="problem-stat">Hors-sol</div>
+          <div class="problem-stat-label">le contenu 100% généré par IA</div>
         </div>
         <div class="problem-card scroll-reveal">
           <div class="problem-icon">💸</div>
-          <h3>Trop cher à déléguer</h3>
-          <p>Un freelance ou une agence, c'est 800 €/mois minimum. Et souvent, ils ne connaissent pas ton secteur.</p>
-          <div class="problem-stat">800€+</div>
-          <div class="problem-stat-label">par mois pour un freelance</div>
+          <h3>Déléguer coûte cher</h3>
+          <p>Un freelance ou une agence, c'est cher, et ils ne connaissent ni ton métier ni tes clients. Tu paies sans garantie.</p>
+          <div class="problem-stat">800€+<span style="font-size:1rem">/mois</span></div>
+          <div class="problem-stat-label">pour un freelance social media</div>
+        </div>
+        <div class="problem-card scroll-reveal">
+          <div class="problem-icon">📉</div>
+          <h3>L'irrégularité te rend invisible</h3>
+          <p>Sans régularité, l'algorithme t'oublie et ton expertise reste invisible. Pendant ce temps, tes concurrents, eux, publient.</p>
+          <div class="problem-stat">7j/7</div>
+          <div class="problem-stat-label">le rythme de ceux qu'on voit</div>
         </div>
       </div>
     </div>
@@ -1050,41 +1082,42 @@
   <section id="solutions" class="section">
     <div class="container">
       <div class="text-center">
-        <span class="section-label">La solution</span>
-        <h2 class="scroll-reveal">Ton assistant marketing IA<br />qui ne prend jamais de vacances ⏰</h2>
-        <p class="scroll-reveal" style="color:var(--color-text-secondary); margin-top:var(--space-3); font-size:var(--text-body-lg); max-width:560px; margin-left:auto; margin-right:auto;">EasySN AI comprend ton secteur, crée du contenu authentique et publie au moment où ton audience est la plus active.</p>
+        <span class="section-label">Ce que fait EasySN</span>
+        <h2 class="scroll-reveal">Tes publications, à partir de ta réalité,<br />validées par toi, publiées pour toi</h2>
+        <p class="scroll-reveal" style="color:var(--color-text-secondary); margin-top:var(--space-3); font-size:var(--text-body-lg); max-width:600px; margin-left:auto; margin-right:auto;">Pas de magie, pas de contenu hors-sol. On part de tes vraies photos et de ta voix. Tu gardes la main du début à la fin.</p>
       </div>
 
       <div class="solutions-grid scroll-reveal-stagger">
+        <div class="solution-card feature-star scroll-reveal">
+          <span class="feature-tag">Le différenciateur</span>
+          <div class="sol-icon">📷</div>
+          <h3>Tes vraies photos, jamais d'IA</h3>
+          <p>On part de ta banque d'images (un simple dossier Google Drive). Tes produits, ton atelier, ton équipe. Ta marque reste la tienne, rien n'est inventé.</p>
+        </div>
         <div class="solution-card scroll-reveal">
           <div class="sol-icon">✍️</div>
-          <h3>Contenu personnalisé à ta voix</h3>
-          <p>Notre IA apprend ton style, ton secteur et tes clients. Du contenu qui sonne vrai — pas généré.</p>
+          <h3>Des légendes à ta voix</h3>
+          <p>L'IA lit ta base de connaissance (ton activité, ton ton, tes offres) et écrit des légendes ancrées sur ce qu'on voit vraiment sur la photo, adaptées à chaque réseau.</p>
         </div>
         <div class="solution-card scroll-reveal">
-          <div class="sol-icon">📅</div>
-          <h3>Publication aux heures optimales</h3>
-          <p>On analyse les pics d'engagement de ton audience et on publie pile au bon moment pour maximiser ta portée.</p>
+          <div class="sol-icon">✅</div>
+          <h3>Tu valides en 1 clic, par email</h3>
+          <p>Chaque jour, tu reçois un mail : Publier, Suivant ou Annuler. Rien ne part sans ton accord. Pas de logiciel à apprendre, pas de tableau de bord à surveiller.</p>
         </div>
         <div class="solution-card scroll-reveal">
-          <div class="sol-icon">🎯</div>
-          <h3>Multi-réseaux en un clic</h3>
-          <p>LinkedIn, Instagram, Facebook — adapté à chaque réseau avec le bon format, le bon ton et les bons hashtags.</p>
+          <div class="sol-icon">🔗</div>
+          <h3>LinkedIn, Facebook, Instagram d'un coup</h3>
+          <p>Une seule validation publie sur tes trois réseaux en même temps, avec le bon format pour chacun. Tu ne jongles plus entre les applis.</p>
         </div>
         <div class="solution-card scroll-reveal">
-          <div class="sol-icon">👀</div>
-          <h3>Tu gardes le contrôle</h3>
-          <p>Tu valides, on publie. Aucun post ne part sans ton accord. Ton expertise reste au centre.</p>
+          <div class="sol-icon">🗓️</div>
+          <h3>Généré chaque semaine, tout seul</h3>
+          <p>Le lundi matin, toute ta semaine de contenu est prête. Tu n'as plus jamais la page blanche du dimanche soir.</p>
         </div>
         <div class="solution-card scroll-reveal">
-          <div class="sol-icon">📊</div>
-          <h3>Analytics qui parlent enfin</h3>
-          <p>Tableau de bord clair : ce qui marche, ce qui convertit, sans te noyer dans les chiffres.</p>
-        </div>
-        <div class="solution-card scroll-reveal">
-          <div class="sol-icon">🔁</div>
-          <h3>Recyclage intelligent</h3>
-          <p>Tes meilleurs contenus sont recyclés et réadaptés automatiquement. Ton expertise, toujours rentable.</p>
+          <div class="sol-icon">📈</div>
+          <h3>Ton récap chaque dimanche</h3>
+          <p>Un mail clair en fin de semaine : ce qui a été publié, ce qui a marché. Les chiffres utiles, sans te noyer dedans.</p>
         </div>
       </div>
     </div>
@@ -1095,9 +1128,9 @@
   <!-- ── 4. PROCESS ────────────────────────────────────────────────── -->
   <section id="process">
     <div class="container text-center">
-      <span class="section-label">La mise en place</span>
-      <h2 class="scroll-reveal">3 étapes pour automatiser tes réseaux</h2>
-      <p class="scroll-reveal" style="color:var(--color-text-secondary); margin-top:var(--space-3); font-size:var(--text-body-lg);">C'est plus simple que de commander une pizza 🍕</p>
+      <span class="section-label">Comment on démarre</span>
+      <h2 class="scroll-reveal">On s'occupe de la mise en place. Toi, tu valides.</h2>
+      <p class="scroll-reveal" style="color:var(--color-text-secondary); margin-top:var(--space-3); font-size:var(--text-body-lg);">Pas de logiciel à installer. On branche tout, tu n'as qu'à dire oui.</p>
     </div>
 
     <div class="container">
@@ -1108,9 +1141,9 @@
             <div class="step-line"></div>
           </div>
           <div class="step-body">
-            <h3>Tu crées ton profil en 15 minutes</h3>
-            <p>Tu nous parles de ton activité, tes clients idéaux et ta personnalité de marque. Plus c'est précis, plus le contenu est bon.</p>
-            <span class="step-time">⏱ 15 minutes</span>
+            <h3>On t'audite et on construit ta base de connaissance</h3>
+            <p>Un échange pour cadrer ton activité, ta voix, tes offres et tes clients. On en fait un document de référence que l'IA lira à chaque génération.</p>
+            <span class="step-time">⏱ Une fois, au départ</span>
           </div>
         </div>
 
@@ -1120,20 +1153,32 @@
             <div class="step-line"></div>
           </div>
           <div class="step-body">
-            <h3>L'IA prépare tes 30 premiers posts</h3>
-            <p>Tu reçois un planning éditorial complet — tu valides, ajustes si besoin, et l'IA apprend à chaque retour.</p>
-            <span class="step-time">⏱ 48 heures</span>
+            <h3>Tu déposes tes photos dans un dossier Drive</h3>
+            <p>Ta banque d'images réelles. On connecte tes comptes LinkedIn, Facebook et Instagram en sécurité. Et c'est tout côté technique.</p>
+            <span class="step-time">⏱ 30 minutes</span>
           </div>
         </div>
 
         <div class="step scroll-reveal">
           <div class="step-aside">
             <div class="step-num">3</div>
+            <div class="step-line"></div>
           </div>
           <div class="step-body">
-            <h3>On publie. Tu vois les résultats.</h3>
-            <p>La machine tourne toute seule. Tu reçois un rapport hebdo et tu te concentres sur ce qui compte vraiment : ton business.</p>
-            <span class="step-time">⏱ Dès J+1</span>
+            <h3>Chaque lundi, ta semaine est générée</h3>
+            <p>EasySN pioche dans tes photos (sans jamais réutiliser deux fois la même au hasard) et rédige les légendes à ta voix, réseau par réseau.</p>
+            <span class="step-time">⏱ Automatique</span>
+          </div>
+        </div>
+
+        <div class="step scroll-reveal">
+          <div class="step-aside">
+            <div class="step-num">4</div>
+          </div>
+          <div class="step-body">
+            <h3>Tu valides par email, on publie</h3>
+            <p>Un mail par jour : Publier, Suivant ou Annuler. On publie sur tes trois réseaux. Le dimanche, tu reçois ton récap. La machine tourne sans toi.</p>
+            <span class="step-time">⏱ 2 minutes par jour</span>
           </div>
         </div>
       </div>
@@ -1146,85 +1191,63 @@
   <section id="testimonials">
     <div class="container">
       <div class="text-center">
-        <span class="section-label">Ils témoignent</span>
-        <h2 class="scroll-reveal">Nos clients gagnent 5h par semaine<br />et 3x plus d'engagement 💡</h2>
+        <span class="section-label">Ils nous font confiance</span>
+        <h2 class="scroll-reveal">On démarre avec de vrais clients,<br />pas avec des promesses</h2>
       </div>
 
       <div class="testi-grid scroll-reveal-stagger">
-        <div class="testi-card scroll-reveal">
+        <!-- VRAI CLIENT : faits réels, aucune citation inventée -->
+        <div class="testi-card real scroll-reveal">
+          <span class="testi-tag client">Client réel</span>
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"Je dépensais 3h par semaine à écrire des posts qui récoltaient peu. Aujourd'hui EasySN gère tout, et mon LinkedIn tourne tout seul pendant que je suis avec mes clients."</p>
+          <p class="testi-quote">Circuit de karting près de Montpellier, 40 ans d'existence en 2026. EasySN publie chaque semaine sur leurs réseaux à partir de leurs vraies photos de circuit et de sessions.</p>
           <div class="testi-author">
-            <div class="testi-avatar">👨</div>
+            <div class="testi-avatar">🏁</div>
             <div>
-              <div class="testi-name">Marc D.</div>
-              <div class="testi-role">Consultant RH — Paris</div>
+              <div class="testi-name">LOC'KARTING</div>
+              <div class="testi-role">Loisirs sportifs · Pérols (34)</div>
             </div>
           </div>
           <div class="testi-metric">
             <div class="testi-metric-item">
-              <div class="testi-metric-num">+340%</div>
-              <div class="testi-metric-lbl">Engagement</div>
+              <div class="testi-metric-num">4,4/5</div>
+              <div class="testi-metric-lbl">1 374 avis Google</div>
             </div>
             <div class="testi-metric-item">
-              <div class="testi-metric-num">5h</div>
-              <div class="testi-metric-lbl">Gagnées/sem.</div>
+              <div class="testi-metric-num">40 ans</div>
+              <div class="testi-metric-lbl">d'activité</div>
             </div>
             <div class="testi-metric-item">
-              <div class="testi-metric-num">3 mois</div>
-              <div class="testi-metric-lbl">Pour des résultats</div>
+              <div class="testi-metric-num">3 réseaux</div>
+              <div class="testi-metric-lbl">automatisés</div>
             </div>
           </div>
         </div>
 
-        <div class="testi-card scroll-reveal">
+        <!-- PLACEHOLDER : à remplacer par un vrai témoignage -->
+        <div class="testi-card placeholder scroll-reveal">
+          <span class="testi-tag todo">Emplacement</span>
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"J'avais peur que ça sonne faux. Au final mes clients me disent que mes posts sont enfin réguliers et que je leur parle vraiment. Setup en 20 min, chrono."</p>
+          <p class="testi-quote">Ton témoignage ici. Un client qui raconte comment il a arrêté de stresser pour ses posts et combien de temps il a récupéré chaque semaine.</p>
           <div class="testi-author">
-            <div class="testi-avatar">👩</div>
+            <div class="testi-avatar">🙂</div>
             <div>
-              <div class="testi-name">Sophie L.</div>
-              <div class="testi-role">Naturopathe — Lyon</div>
-            </div>
-          </div>
-          <div class="testi-metric">
-            <div class="testi-metric-item">
-              <div class="testi-metric-num">+280%</div>
-              <div class="testi-metric-lbl">Abonnés Instagram</div>
-            </div>
-            <div class="testi-metric-item">
-              <div class="testi-metric-num">4 leads</div>
-              <div class="testi-metric-lbl">Le premier mois</div>
-            </div>
-            <div class="testi-metric-item">
-              <div class="testi-metric-num">20 min</div>
-              <div class="testi-metric-lbl">Pour démarrer</div>
+              <div class="testi-name">À venir</div>
+              <div class="testi-role">Ton prochain client</div>
             </div>
           </div>
         </div>
 
-        <div class="testi-card scroll-reveal">
+        <!-- PLACEHOLDER : à remplacer par un vrai témoignage -->
+        <div class="testi-card placeholder scroll-reveal">
+          <span class="testi-tag todo">Emplacement</span>
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"J'ai testé 3 outils avant EasySN. Les autres généraient du contenu bateau. Là, c'est vraiment adapté à mon secteur BTP. ROI en 6 semaines."</p>
+          <p class="testi-quote">Ton témoignage ici. Idéalement un artisan ou une profession libérale qui souligne que le contenu lui ressemble vraiment, parce qu'il vient de ses photos.</p>
           <div class="testi-author">
-            <div class="testi-avatar">👨</div>
+            <div class="testi-avatar">🙂</div>
             <div>
-              <div class="testi-name">Karim B.</div>
-              <div class="testi-role">Artisan BTP — Toulouse</div>
-            </div>
-          </div>
-          <div class="testi-metric">
-            <div class="testi-metric-item">
-              <div class="testi-metric-num">+2 clients</div>
-              <div class="testi-metric-lbl">Via LinkedIn</div>
-            </div>
-            <div class="testi-metric-item">
-              <div class="testi-metric-num">ROI</div>
-              <div class="testi-metric-lbl">En 6 semaines</div>
-            </div>
-            <div class="testi-metric-item">
-              <div class="testi-metric-num">0h</div>
-              <div class="testi-metric-lbl">De gestion/semaine</div>
+              <div class="testi-name">À venir</div>
+              <div class="testi-role">Ton prochain client</div>
             </div>
           </div>
         </div>
@@ -1237,93 +1260,84 @@
   <!-- ── 7. PRICING ────────────────────────────────────────────────── -->
   <section id="pricing">
     <div class="container text-center">
-      <span class="section-label">Tarifs</span>
-      <h2 class="scroll-reveal">Plus abordable qu'un stagiaire,<br />plus efficace qu'une agence</h2>
-      <p class="scroll-reveal" style="color:var(--color-text-secondary); margin-top:var(--space-3); font-size:var(--text-body-lg);">Pas d'engagement. Pas de surprise. Annule quand tu veux.</p>
+      <span class="section-label">Tarif</span>
+      <h2 class="scroll-reveal">Moins cher qu'un salarié,<br />plus fidèle qu'une agence</h2>
+      <p class="scroll-reveal" style="color:var(--color-text-secondary); margin-top:var(--space-3); font-size:var(--text-body-lg);">On installe, on maintient, tu valides. Sans engagement de durée.</p>
     </div>
 
     <div class="container">
       <div class="pricing-grid scroll-reveal-stagger">
         <div class="pricing-card scroll-reveal">
-          <div class="plan-name">Starter</div>
-          <div class="plan-price">49 €<span>/mois</span></div>
-          <p class="plan-desc">Pour les entrepreneurs qui démarrent leur présence en ligne.</p>
+          <div class="plan-name">Pour commencer</div>
+          <div class="plan-price">490 €<span> HT</span></div>
+          <div class="plan-sub">Audit stratégique</div>
+          <p class="plan-desc">Comprendre ce qui bloque ta présence et repartir avec un plan clair.</p>
           <ul class="plan-features">
-            <li>1 réseau social</li>
-            <li>12 posts par mois</li>
-            <li>Génération de contenu IA</li>
-            <li>Tableau de bord basique</li>
-            <li class="off">Horaires optimaux</li>
-            <li class="off">Multi-réseaux</li>
-            <li class="off">Recyclage intelligent</li>
+            <li>Analyse de ton activité et de ta présence digitale</li>
+            <li>Identification des points de friction</li>
+            <li>Plan d'action concret et priorisé</li>
+            <li>Première version de ta base de connaissance</li>
+            <li>Déductible si tu enclenches EasySN derrière</li>
           </ul>
-          <a href="#cta-final" class="btn btn-secondary plan-cta">Tester gratuitement</a>
+          <a href="#cta-final" data-cta class="btn btn-secondary plan-cta">Réserver l'audit</a>
         </div>
 
         <div class="pricing-card popular scroll-reveal">
-          <span class="popular-badge">🔥 Le plus populaire</span>
-          <div class="plan-name">Pro</div>
-          <div class="plan-price">99 €<span>/mois</span></div>
-          <p class="plan-desc">Pour les pros qui veulent des résultats concrets rapidement.</p>
+          <span class="popular-badge">⭐ Le coeur du service</span>
+          <div class="plan-name">EasySN, présence automatisée</div>
+          <div class="plan-price">3 500 €<span> HT</span></div>
+          <div class="plan-sub">+ 150 à 490 €/mois de maintenance</div>
+          <p class="plan-desc">Tout le système, installé et maintenu pour toi. Tu n'as plus qu'à valider.</p>
           <ul class="plan-features">
-            <li>3 réseaux sociaux</li>
-            <li>30 posts par mois</li>
-            <li>Génération de contenu IA avancée</li>
-            <li>Analytics complets</li>
-            <li>Horaires optimaux automatiques</li>
-            <li>Multi-réseaux adaptés</li>
-            <li class="off">Recyclage intelligent</li>
+            <li>Génération hebdo à partir de tes vraies photos</li>
+            <li>Légendes à ta voix, adaptées à chaque réseau</li>
+            <li>Validation en 1 clic par email, chaque jour</li>
+            <li>Publication LinkedIn + Facebook + Instagram</li>
+            <li>Récap KPI envoyé chaque dimanche</li>
+            <li>Base de connaissance maintenue avec toi</li>
           </ul>
-          <a href="#cta-final" class="btn btn-primary plan-cta">Démarrer mon essai gratuit</a>
+          <a href="#cta-final" data-cta class="btn btn-primary plan-cta">Réserver un appel</a>
         </div>
 
         <div class="pricing-card scroll-reveal">
-          <div class="plan-name">Business</div>
-          <div class="plan-price">199 €<span>/mois</span></div>
-          <p class="plan-desc">Pour les équipes et PME avec plusieurs marques à gérer.</p>
+          <div class="plan-name">Plusieurs marques</div>
+          <div class="plan-price">Sur devis</div>
+          <div class="plan-sub">Sur-mesure</div>
+          <p class="plan-desc">Pour les groupes, franchises ou agences qui gèrent plusieurs comptes.</p>
           <ul class="plan-features">
-            <li>5 réseaux sociaux</li>
-            <li>Posts illimités</li>
-            <li>IA ultra-personnalisée</li>
-            <li>Analytics + rapports PDF</li>
-            <li>Horaires optimaux automatiques</li>
-            <li>Multi-réseaux adaptés</li>
-            <li>Recyclage intelligent</li>
+            <li>Plusieurs marques ou points de vente</li>
+            <li>Cadence personnalisée par compte</li>
+            <li>Réseaux et intégrations spécifiques</li>
+            <li>Accompagnement dédié</li>
           </ul>
-          <a href="#cta-final" class="btn btn-secondary plan-cta">Tester gratuitement</a>
+          <a href="#cta-final" data-cta class="btn btn-secondary plan-cta">En parler</a>
         </div>
       </div>
 
       <p class="pricing-note scroll-reveal">
-        💡 Un freelance social media coûte en moyenne <strong>800 €/mois</strong> sans garantie. Avec EasySN AI, tu gardes le contrôle et paies 4 à 8× moins.
+        💡 L'audit (490 € HT) est déductible si tu enclenches la présence automatisée derrière. Et toujours le principe d'EasySN : <strong>pas de génération d'image IA</strong>, on part de tes vraies photos. Ta marque reste la tienne.
       </p>
     </div>
   </section>
 
-  <!-- ── 8. LOGOS MARQUEE ──────────────────────────────────────────── -->
+  <!-- ── 8. INTEGRATIONS MARQUEE ───────────────────────────────────── -->
   <section id="logos">
-    <p class="logos-label">Ils nous font confiance</p>
+    <p class="logos-label">Publie sur tes réseaux, à partir de tes outils</p>
     <div class="marquee-wrap">
       <div class="marquee-track">
-        <span class="logo-item">ARTISAN & CO</span>
-        <span class="logo-item">NOVA CONSEIL</span>
-        <span class="logo-item">CABINET MÉRIAUX</span>
-        <span class="logo-item">STUDIO CRÉA 44</span>
-        <span class="logo-item">ÉNERGIE PRO</span>
-        <span class="logo-item">LEBLANC IMMOBILIER</span>
-        <span class="logo-item">TECH SOLUTIONS</span>
-        <span class="logo-item">FORMATION PLUS</span>
-        <span class="logo-item">ATELIER DU NUMÉRIQUE</span>
+        <span class="logo-item">LinkedIn</span>
+        <span class="logo-item">Facebook</span>
+        <span class="logo-item">Instagram</span>
+        <span class="logo-item">Google Drive</span>
+        <span class="logo-item">Validation par email</span>
+        <span class="logo-item">Récap hebdo</span>
         <!-- duplicate for seamless loop -->
-        <span class="logo-item">ARTISAN & CO</span>
-        <span class="logo-item">NOVA CONSEIL</span>
-        <span class="logo-item">CABINET MÉRIAUX</span>
-        <span class="logo-item">STUDIO CRÉA 44</span>
-        <span class="logo-item">ÉNERGIE PRO</span>
-        <span class="logo-item">LEBLANC IMMOBILIER</span>
-        <span class="logo-item">TECH SOLUTIONS</span>
-        <span class="logo-item">FORMATION PLUS</span>
-        <span class="logo-item">ATELIER DU NUMÉRIQUE</span>
+        <span class="logo-item">LinkedIn</span>
+        <span class="logo-item">Facebook</span>
+        <span class="logo-item">Instagram</span>
+        <span class="logo-item">Google Drive</span>
+        <span class="logo-item">Validation par email</span>
+        <span class="logo-item">Récap hebdo</span>
       </div>
     </div>
   </section>
@@ -1332,16 +1346,16 @@
   <section id="cta-final" class="grain-texture">
     <div class="glow-orb-1" style="left:50%; transform:translateX(-50%); top:-100px; opacity:.2;"></div>
     <div class="container" style="position:relative; z-index:1;">
-      <h2 class="scroll-reveal text-glow">Rejoins les 500+ entrepreneurs<br />qui automatisent déjà 🚀</h2>
-      <p class="scroll-reveal">Setup en 15 min. Premiers posts en 48h. Résultats garantis ou remboursé — sans questions.</p>
-      <a href="#" class="btn btn-primary scroll-reveal" style="font-size:1.1rem; padding:1.1rem 2.5rem; box-shadow: var(--shadow-glow-intense);">
-        Récupérer mes 5h par semaine →
+      <h2 class="scroll-reveal text-glow">Arrête de courir après tes réseaux.<br />Réserve un appel.</h2>
+      <p class="scroll-reveal">On regarde ensemble ton activité et tes photos, et on te dit franchement si EasySN est fait pour toi. Sans blabla, sans pression.</p>
+      <a href="#" data-cta class="btn btn-primary scroll-reveal" style="font-size:1.1rem; padding:1.1rem 2.5rem; box-shadow: var(--shadow-glow-intense);">
+        Réserver un appel →
       </a>
       <div class="cta-guarantees scroll-reveal">
-        <span class="guarantee"><span class="check">✓</span> 14 jours gratuits</span>
-        <span class="guarantee"><span class="check">✓</span> Sans CB requise</span>
-        <span class="guarantee"><span class="check">✓</span> Annulation en 1 clic</span>
-        <span class="guarantee"><span class="check">✓</span> Setup en 15 minutes</span>
+        <span class="guarantee"><span class="check">✓</span> Tes vraies photos, jamais d'IA</span>
+        <span class="guarantee"><span class="check">✓</span> Tu valides chaque post</span>
+        <span class="guarantee"><span class="check">✓</span> Sans engagement de durée</span>
+        <span class="guarantee"><span class="check">✓</span> Audit déductible si tu continues</span>
       </div>
     </div>
   </section>
@@ -1351,37 +1365,50 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="logo">EasySN <span>AI</span></a>
-          <p>Vos publications sur les réseaux sociaux automatisées. Libérez-vous de la corvée des réseaux sociaux.</p>
+          <a href="#" class="logo">Easy<span>SN</span></a>
+          <p>Tes réseaux sociaux publiés pour toi, à partir de tes vraies photos. Un service de l'agence ULTRAFACILE AI.</p>
         </div>
         <div class="footer-col">
-          <h4>Produit</h4>
+          <h4>EasySN</h4>
           <ul>
-            <li><a href="#solutions">Fonctionnalités</a></li>
-            <li><a href="#pricing">Tarifs</a></li>
+            <li><a href="#solutions">Ce que ça fait</a></li>
             <li><a href="#process">Comment ça marche</a></li>
-            <li><a href="#">Intégrations</a></li>
+            <li><a href="#pricing">Tarif</a></li>
+            <li><a href="#cta-final" data-cta>Réserver un appel</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Légal</h4>
           <ul>
             <li><a href="#">Mentions légales</a></li>
-            <li><a href="#">CGU</a></li>
+            <li><a href="#">CGV</a></li>
             <li><a href="#">Politique de confidentialité</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 EasySN AI. Tous droits réservés.</span>
-        <span>Fait avec ❤️ pour les entrepreneurs français</span>
+        <span>© 2026 ULTRAFACILE AI. Tous droits réservés.</span>
+        <span>Fait avec ❤️ pour les TPE et PME françaises</span>
       </div>
     </div>
   </footer>
 
   <!-- ── SCRIPTS ───────────────────────────────────────────────────── -->
   <script>
+    // ─────────────────────────────────────────────────────────────────
+    // CTA : lien de prise de rendez-vous TidyCal.
+    // Une seule ligne à changer si ton slug évolue.
+    // Tous les boutons marqués data-cta pointeront automatiquement dessus.
+    // ─────────────────────────────────────────────────────────────────
+    const BOOKING_URL = "https://tidycal.com/easysn";
+
+    document.querySelectorAll('a[data-cta]').forEach(a => {
+      a.setAttribute('href', BOOKING_URL);
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener');
+    });
+
     // Nav scroll effect
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {
